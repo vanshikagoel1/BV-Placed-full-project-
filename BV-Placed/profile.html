@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link href="dashboard1.css" type="text/css" rel="stylesheet" />
+    <link href="profile.css" type="text/css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="formWrapper">
+      <div id="backArrowWrapper">
+        <img src="BackArrow.svg" alt="bell" id="backIcon" />
+      </div>
+
+      <div id="bellWrapper">
+        <img src="bell 1.svg" alt="bell" id="bellIcon" />
+      </div>
+
+      <form id="profileEditForm">
+        <h2>Student Profile Edit</h2>
+        <div class="inputSection2Row">
+          <input
+            name="Date of Birth"
+            placeholder="Date of Birth*"
+            type="date"
+          />
+          <input name="Phone Number" placeholder="Phone Number" />
+        </div>
+        <div>
+          <input placeholder="Permanent Address" />
+        </div>
+        <div>
+          <input type="text" placeholder="SmartID" id="sid" />
+        </div>
+        <div>
+          <input type="file" placeholder="Upload File" id="resume" />
+        </div>
+        <div>
+          <input type="text" placeholder="Enter CGPA" />
+        </div>
+        <div>
+          <input type="button" value="submit" id="btn" />
+        </div>
+      </form>
+    </div>
+    <script src="./node_modules/axios/dist/axios.min.js"></script>
+    <script src="./uploadFile.js"></script>
+  </body>
+</html>

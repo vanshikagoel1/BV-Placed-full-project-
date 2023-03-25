@@ -1,0 +1,220 @@
+@keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .home-page-child {
+    position: absolute;
+    top: 56px;
+    left: 931px;
+    width: 509px;
+    height: 553px;
+    opacity: 0.5;
+  }
+  .university-campus-1 {
+    position: absolute;
+    top: 198px;
+    left: 869px;
+    border-radius: var(--br-mini);
+    width: 485.52px;
+    height: 636px;
+    object-fit: cover;
+  }
+  .open-the-gates {
+    margin: 0;
+    position: absolute;
+    top: 210px;
+    left: 166px;
+    font-size: 55.67px;
+    text-transform: capitalize;
+    font-weight: 700;
+    font-family: inherit;
+    color: #13007d;
+    display: inline-block;
+    width: 583.26px;
+  }
+  .banasthali-vidyapith-is {
+    margin: 0;
+  }
+  .banasthali-vidyapith-is-container {
+    margin: 0;
+    position: absolute;
+    top: 368px;
+    left: 175px;
+    font-size: var(--font-size-4xl);
+    font-weight: 400;
+    font-family: inherit;
+    display: inline-block;
+    width: 555px;
+  }
+  .view-dashboard {
+    position: relative;
+    font-size: var(--font-size-4xl);
+    font-family: var(--font-times-new-roman);
+    color: var(--color-white);
+    text-align: left;
+  }
+  .view-dashboard-wrapper {
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    background-color: var(--color-midnightblue-100);
+    position: absolute;
+    top: 580px;
+    left: 175px;
+    border-radius: var(--br-mini);
+    width: 224px;
+    height: 52px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .companies-visited,
+  .highest-package,
+  .placement-percentage {
+    margin: 0;
+    position: absolute;
+    top: 758px;
+    left: 175px;
+    font-size: inherit;
+    font-weight: 400;
+    font-family: inherit;
+    display: inline-block;
+    width: 108px;
+  }
+  .companies-visited,
+  .highest-package {
+    left: 392px;
+    width: 117px;
+  }
+  .highest-package {
+    left: 617px;
+    width: 131px;
+  }
+  .b,
+  .b1 {
+    top: 717px;
+    font-size: var(--font-size-17xl);
+    color: var(--color-midnightblue-100);
+  }
+  .b {
+    position: absolute;
+    left: 196px;
+  }
+  .b1 {
+    left: 411px;
+  }
+  .b1,
+  .icon,
+  .lpa {
+    position: absolute;
+  }
+  .lpa {
+    top: 717px;
+    left: 593px;
+    font-size: var(--font-size-17xl);
+    font-weight: 700;
+    color: var(--color-midnightblue-100);
+  }
+  .icon {
+    top: 0;
+    left: 0;
+    width: 188px;
+    height: 188px;
+    object-fit: cover;
+  }
+  .dashboard {
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+    position: relative;
+    font-size: var(--font-size-5xl);
+    font-family: var(--font-times-new-roman);
+    color: var(--color-black);
+    text-align: left;
+    display: inline-block;
+  }
+  .dashboard-parent {
+    position: absolute;
+    top: 17px;
+    left: 0;
+    width: 622px;
+    display: flex;
+    flex-direction: row;
+    padding: 0 0 0 122px;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .component-1-icon {
+    position: absolute;
+    top: 0;
+    left: 752px;
+    width: 61px;
+    height: 61px;
+    object-fit: cover;
+  }
+  .bell-1-icon {
+    position: absolute;
+    top: 17px;
+    left: 692px;
+    width: 35px;
+    height: 35px;
+    overflow: hidden;
+  }
+  .frame-child {
+    position: relative;
+    border-top: 3px solid var(--color-midnightblue-100);
+    box-sizing: border-box;
+    width: 51.01px;
+    height: 3px;
+    flex-shrink: 0;
+  }
+  .home-parent {
+    position: absolute;
+    top: 17px;
+    left: 0;
+    width: 59px;
+    height: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 4px;
+  }
+  .frame-parent,
+  .nav-bar {
+    position: absolute;
+    top: 50px;
+    left: 608px;
+    width: 813px;
+    height: 61px;
+  }
+  .nav-bar {
+    top: 0;
+    left: 0;
+    width: 1440px;
+    height: 188px;
+    overflow: hidden;
+    opacity: 0;
+  }
+  .nav-bar.animate {
+    animation: 1s ease 0s 1 normal forwards fade-in;
+  }
+  .home-page {
+    position: relative;
+    background-color: var(--color-white);
+    width: 100%;
+    height: 1024px;
+    overflow: hidden;
+    text-align: left;
+    font-size: var(--font-size-5xl);
+    color: var(--color-black);
+    font-family: var(--font-times-new-roman);
+  }
