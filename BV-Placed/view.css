@@ -82,8 +82,8 @@
 }
 .learn-more {
   position: absolute;
-  top: 13px;
-  left: 57px;
+  top: 7px;
+  left: 35px;
   font-size: var(--font-size-11xl);
   font-family: var(--font-times-new-roman);
   color: var(--color-navy);
