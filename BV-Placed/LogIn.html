@@ -20,8 +20,8 @@
                 <h2>WELCOME BACK</h2>
 
                <h3> Log In As</h3>
-               <img src="admin.png" alt="logo" height="80px" width="80px">
-               <img src="student.png" alt="logo" height="80px" width="80px">
+               <img src="admin.png" id= "adminlogin" class="typeoflogin" alt="logo" height="80px" width="80px">
+               <img src="student.png" id= "stulogin" class="typeoflogin" alt="logo" height="80px" width="80px">
                <br> <br><br>
 
 
@@ -55,9 +55,9 @@
               </div>
               <br><br>
 
-              <a href="dashboard.html">go to dash</a>
+
                 <!-- Continue button -->
-                <button type="submit" class="buttonfinal">
+                <button type="submit" class="buttonfinal" id="submit">
                   Continue
                 </button>
 
@@ -68,5 +68,26 @@
     </div>
 
 </div>
+<script>
+  var typeoflogin=0;
+  document.querySelector("#adminlogin").addEventListener("click",function(){
+  typeoflogin=1;
+  document.querySelector("#adminlogin").setAttribute("class","focusclass")
+  })
+  document.querySelector("#stulogin").addEventListener("click",function(){
+  typeoflogin=2;
+  document.querySelector("#stulogin").setAttribute("class","focusclass")
+  })
+  document.querySelector("#submit").addEventListener("click",function(e){
+    e.preventDefault();
+    console.log("Wow");
+    if(typeoflogin==2)
+    window.location.replace("./homepage.html");
+    else if(typeoflogin==1)
+    window.location.replace("./admin-dashboard.html");
+    else
+    alert("Enter creds");
+  })
+</script>
 </body>
 </html>

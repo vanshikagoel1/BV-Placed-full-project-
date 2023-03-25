@@ -1,0 +1,134 @@
+.jp-morgan-chase,
+.jp-morgan-is {
+  position: absolute;
+  
+}
+.jp-morgan-chase {
+  top: 41px;
+  left: 199px;
+  font-size: 49.37px;
+  color: var(--color-navy);
+  text-align: left;
+}
+.jp-morgan-is {
+  top: 137px;
+  left: 79px;
+  display: inline-block;
+  width: 821.51px;
+}
+.no-of-employees {
+  margin: 0;
+}
+.headquarters-united-states-container,
+.no-of-employees-container {
+  position: absolute;
+  top: 336px;
+  left: 22px;
+  letter-spacing: 0.04em;
+}
+.headquarters-united-states-container {
+  left: 267px;
+}
+.wwwjpmorganchasecom2 {
+  text-decoration: underline;
+}
+.wwwjpmorganchasecom1 {
+  color: inherit;
+}
+.website-wwwjpmorganchasecom {
+  position: absolute;
+  top: 329px;
+  left: 606px;
+  letter-spacing: 0.04em;
+  color: inherit;
+}
+.our-impact {
+  position: absolute;
+  top: 502px;
+  left: 44px;
+  font-size: 41.15px;
+  letter-spacing: 0.04em;
+}
+.frame-child {
+  position: absolute;
+  top: 487px;
+  left: 22px;
+  border-radius: 5px;
+  background-color: var(--color-midnightblue-100);
+  width: 11px;
+  height: 77px;
+}
+.we-are-combining-container {
+  position: absolute;
+  top: 603px;
+  left: 31px;
+  font-size: var(--font-size-9xl);
+  letter-spacing: 0.04em;
+  text-align: left;
+  display: inline-block;
+  width: 1279px;
+}
+.vector-icon {
+  position: absolute;
+  height: 5.31%;
+  width: 3.58%;
+  top: 4.88%;
+  right: 94.01%;
+  bottom: 89.82%;
+  left: 2.41%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.learn-more {
+  position: absolute;
+  top: 13px;
+  left: 57px;
+  font-size: var(--font-size-11xl);
+  font-family: var(--font-times-new-roman);
+  color: var(--color-navy);
+  text-align: left;
+}
+.learn-more-wrapper {
+  cursor: pointer;
+  border: 1px solid var(--color-navy);
+  padding: 0;
+  background-color: #e5edfd;
+  position: absolute;
+  top: 821px;
+  left: 1046px;
+  border-radius: 13px;
+  box-sizing: border-box;
+  width: 224px;
+  height: 52px;
+}
+.jp-morgan-chase-co-parent {
+  position: absolute;
+  top: 51px;
+  left: 35px;
+  border-radius: 30px;
+  background-color: var(--color-white);
+  width: 1370px;
+  height: 923px;
+  overflow: hidden;
+}
+.image-7-icon {
+  position: absolute;
+  top: 51px;
+  left: 985px;
+  border-radius: 0 16.04px 0 0;
+  width: 420px;
+  height: 461px;
+  object-fit: cover;
+}
+.view {
+  position: relative;
+  background: linear-gradient(#bcc9e4, #bcc9e4), #fff;
+  width: 100%;
+  height: 1024px;
+  overflow: hidden;
+  text-align: center;
+  font-size: 28.14px;
+  color: var(--color-black);
+  font-family: var(--font-times-new-roman);
+}

@@ -14,6 +14,9 @@ body{
     justify-content: center; 
 }
 
+.typeoflogin:hover{
+cursor:pointer;
+}
 .first{
     background-color: white;
     float: left;
@@ -46,4 +49,7 @@ h2{
 .form-label{
     width: 100%;
    
+}
+.focusclass{
+    border:3px solid whitesmoke;
 }
