@@ -32,7 +32,7 @@ The key feature of this project is that ..... This project will aid me and my te
 👉Nodejs
 👉MongoDB
 
-# Team Member
--SNEHA SINHA
+# Team Member  
+-SNEHA SINHA 
 -VANSHIKA GOEL
 -STUTI BAJAJ
