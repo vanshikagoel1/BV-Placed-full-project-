@@ -14,12 +14,12 @@ BV Placed is a web application for the training and placement cell of our colleg
 
 # Functionality 👩‍💻
 
-Student/Admin signIn.
-Update profile.
-Udate/ Upload Resume.
-Add resources.
-View/Apply Company.
-Notified about the Deadlines.
+👉Student/Admin signIn.
+👉Update profile.
+👉Udate/ Upload Resume.
+👉Add resources.
+👉View/Apply Company.
+👉Notified about the Deadlines.
 
 # Technology and Framework Used ⛏️
 
