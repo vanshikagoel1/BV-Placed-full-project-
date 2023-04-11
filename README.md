@@ -31,3 +31,8 @@ The key feature of this project is that ..... This project will aid me and my te
 👉Bootstrap
 👉Nodejs
 👉MongoDB
+
+# Team Member
+SNEHA SINHA
+VANSHIKA GOEL
+STUTI BAJAJ
