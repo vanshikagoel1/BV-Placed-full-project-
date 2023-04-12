@@ -8,7 +8,7 @@ const connectToMongo = () => {
     useNewUrlParser: true,
     useUnifiedTopology : true,
   })
-  .then(() => console.log("app connected to Mongo Successfully"))
+  .then(() => console.log("App connected to Mongo Successfully"))
   .catch((err) => console.log(err.message))
 };
 

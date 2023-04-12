@@ -1,0 +1,82 @@
+#dashboardWrapper{
+    display: flex;
+}
+#sidebar{
+    border-right:2px solid black;
+    height:100vh;
+    width: 20vw;
+}
+#dashboardlogowrapper{
+    border-bottom:1px solid black;
+    height:15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#DashboardLogo{
+    width:20vw;
+}
+#infoWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding:2vh 0;
+    height:20vh;
+    border-bottom:1px solid black;
+}
+#infoWrapper img{
+    height: 70%;
+}
+#dashboardNavigation{
+    height:40vh;
+}
+#dashboardNavigation ul{
+list-style-type: none;
+}
+#dashboardNavigation li{
+    border-bottom: 1px solid black;
+    font-size: 1.5em;
+    padding:1vh 0;
+    text-align: center;
+}
+#dashboardNavigation li:hover{
+    background-color: rgba(0, 0, 255, 0.278);
+    color:red;
+}
+#dashboardNavigation a{
+    color:black;
+    text-decoration: none;
+}
+#rightDashboard{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+#Dashboardheader{
+    border-bottom:1px solid rgba(0, 0, 0, 0.378);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24px;
+    padding:2vh 1vw;
+}
+
+#currentOffersList{
+    width:100%;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#currentOffersList table{
+    border:2px solid black;
+    border-radius: 20px;
+    padding:2vh 4vw;
+    width: 80%;
+}
+#currentOffersList td,th{
+    text-align: center;
+}

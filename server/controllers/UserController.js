@@ -42,6 +42,7 @@ module.exports.signup = async (req, res, next) => {
 module.exports.login = async (req, res, next) => {
     try {
         const { smartId, password } = req.body;
+        console.log(req.body);
         let user = await User.findOne({ smartId });
         if (!user) {
           return res.json({ status:false, msg: "Please login with correct details" });
@@ -68,10 +69,13 @@ module.exports.login = async (req, res, next) => {
 
 module.exports.temp = async (req, res, next) => { // just to demo a controller using fetchuser middleware
   try {
-   
-    res.json({username:req.user.username, email: req.user.email, id: req.user.id });
+    const smartId = req.user.smartId;
+    let user = await User.findOne({ smartId });
+    console.log(user);
+    res.json({username:req.user.name, email: req.user.email, id: req.user.id,smartId:req.user.smartId });
     // return res.json({ status: true, authToken });
   } catch (ex) {
+    // res.status(400).json({err:ex})
     next(ex);
   }
 };

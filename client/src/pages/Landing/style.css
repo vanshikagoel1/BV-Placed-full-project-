@@ -1,0 +1,82 @@
+.navBar{
+    height:15vh;
+    display: flex;
+
+}
+.navBar nav{
+    width:70%;
+    display: flex;
+    justify-content: flex-end;
+}
+.navBar nav ul{
+    list-style-type: none;
+    display: flex;
+    font-size: 24px;
+    justify-content: space-evenly;
+    width: 50%;
+    align-items: center;
+}
+.navBar nav a{
+    color:black;
+    text-decoration: none;
+}
+.navBar nav a:hover{
+    border-bottom: 1px solid black;
+}
+#pfpAndNotif{
+    display: flex;
+    width:10%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#pfpAndNotif img{
+    width:20%;
+    height:50%;
+}
+#landingMain{
+    display: flex;
+    height:85vh;
+}
+#leftHalfLanding{
+    width: 50%;
+    padding:5vh 10vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+#leftHalfLanding h1{
+    font-size: 54px;
+}
+#leftHalfLanding p{
+    font-size: 24px;
+}
+#leftHalfLanding button{
+    width:30%;
+    font-size: 20px;
+    border-radius: 24px;
+    padding:2vh 0;
+    border:none;
+}
+#stats{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+}
+#stats div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.statsNumber{
+    color:blue;
+    font-size: 36px;
+    font-weight: bold;
+}
+#rightHalfLanding{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

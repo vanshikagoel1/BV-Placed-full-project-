@@ -5,6 +5,7 @@ const fetchuser = require('./middleware/FetchUser')
 
 router.post("/signup", signup);
 router.post("/login", login);
-router.get("/temp", fetchuser, temp); //example of using middleware
+router.get("/fetchUser", fetchuser, temp); //example of using middleware
+// router.post('/fetchUser',fetchUser)
 
 module.exports = router;
