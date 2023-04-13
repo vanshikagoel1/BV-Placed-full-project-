@@ -60,6 +60,7 @@ const Dashboard = () => {
       }
     })
     .then(res=>{
+      alert("Applied");
       console.log(res);
     })
     .catch(err=>{
