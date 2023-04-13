@@ -48,6 +48,18 @@ module.exports.fileUploadController = async (req, res, next) => {
   }
 };
 
+module.exports.getFile = async(req,res)=>{
+  try {
+    const smartId = req.user.id;
+    console.log(smartId);
+    const file = await FileModel.find({smartId:req.user.id})
+    console.log(file);
+    res.json(file);
+  } catch (error) {
+    console.log(error);
+    res.json(error)
+  }
+}
 // module.exports.getAllFilesController = async (req, res, next) => {
 //   try {
 //     const files = await FileModel.find({}, { _id: 1, filename: 1 });

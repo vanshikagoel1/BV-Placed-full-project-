@@ -1,6 +1,7 @@
 const bcrypt = require("bcrypt");
 var jwt = require("jsonwebtoken");
-const User = require('../models/UserModel')
+const User = require('../models/UserModel');
+const UserModel = require("../models/UserModel");
 
 module.exports.signup = async (req, res, next) => {
   try {
@@ -70,12 +71,25 @@ module.exports.login = async (req, res, next) => {
 module.exports.temp = async (req, res, next) => { // just to demo a controller using fetchuser middleware
   try {
     const smartId = req.user.smartId;
-    let user = await User.findOne({ smartId });
-    console.log(user);
-    res.json({username:req.user.name, email: req.user.email, id: req.user.id,smartId:req.user.smartId });
+    let {_id,name,email,department,contact} = await User.findOne({ smartId });
+    
+    res.json({_id,smartId,name,email,department,contact}); 
     // return res.json({ status: true, authToken });
   } catch (ex) {
     // res.status(400).json({err:ex})
     next(ex);
   }
 };
+
+module.exports.updateUser = async(req,res)=>{
+  try {
+    const {contact,address,SmartId,Resume,CGPA} = req.body;
+    const user = await UserModel.findById(req.user.id);
+    user.contact = contact;
+    console.log(user);
+    return res.status(200).json("Updated");
+  } catch (error) {
+    console.log(error);
+    res.status(400).json({error:error})
+  }
+}

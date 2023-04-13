@@ -1,9 +1,11 @@
 const router = require('express').Router()
-const { fileUploadController } = require('../controllers/FileController');
+const { fileUploadController,getFile } = require('../controllers/FileController');
 const upload = require('./middleware/upload');
+const fetchuser = require('./middleware/FetchUser')
 
 
 router.post('/uploadFile/:id', upload.single('pdf'), fileUploadController)
+router.get('/getFile/:id', fetchuser, getFile)
 
 
 

@@ -3,11 +3,11 @@ import "./style.css";
 import logo from "../../assets/logo.png"
 import loginVector from "../../assets/loginVector.svg";
 import studentLogin from "../../assets/studentLogin.svg";
+import baseURL from '../../Common';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-const baseURL = 'http://localhost:8000';
 const navigate = useNavigate();
   const [formInputs, setformInputs] = useState({
     smartId:"",
@@ -24,6 +24,12 @@ const navigate = useNavigate();
   const handleSubmit = (e)=>{
     e.preventDefault();
     console.log(formInputs);
+
+
+    // if(formInputs.smartId.slice(0,5)!="btbti")
+    // return alert("Need a Banasthali Smart Card Id")
+
+
     axios.post(`${baseURL}/api/auth/login`,formInputs)
     .then(res=>{
       localStorage.setItem('JWT', res.data.authToken);

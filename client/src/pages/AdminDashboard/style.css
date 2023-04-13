@@ -23,7 +23,7 @@
     width:5%;
 }
 #lowerAdmin{
-    border:2px solid black;
+    border-top:2px solid black;
     height:88vh;
     display: flex;
 }
@@ -60,8 +60,7 @@
     width: 100%;
     padding:2vw;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
 }
 .active{
@@ -88,10 +87,12 @@
 #addCompanyForm{
     border:2px solid black;
     width:50%;
+    border-radius: 20px;
 }
 #formJTCompanyHolder{
     display: flex;
     justify-content: space-evenly;
+
 }
 #formJTCompanyHolder input{
    width:10vw;

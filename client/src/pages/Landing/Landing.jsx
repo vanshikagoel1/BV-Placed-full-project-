@@ -7,6 +7,7 @@ import campusphoto from "../../assets/campusPhoto1.svg";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import NotAuthorized from "../NotAuthorized/NotAuthorized";
+import baseURL from '../../Common';
 
 const Landing = () => {
   const [user, setuser] = useState(null)
@@ -28,7 +29,6 @@ const Landing = () => {
   
 const navigate = useNavigate();
 const JWT_TOKEN = localStorage.getItem('JWT');
-const baseURL = 'http://localhost:8000';
   
 
   if(user && user.email)
