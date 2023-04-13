@@ -4,8 +4,8 @@ import Landing from "./pages/Landing/Landing";
 import Login from "./pages/Login/Login";
 import Profile from "./pages/Profile/Profile";
 import ManageResources from "./pages/ManageResources/ManageResources";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-const router = createBrowserRouter([
+import { createBrowserRouter, createHashRouter, RouterProvider } from "react-router-dom";
+const router = createHashRouter([
   {
     path: "/",
     element: <Login />,
