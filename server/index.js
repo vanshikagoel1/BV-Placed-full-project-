@@ -12,6 +12,9 @@ app.use(cors());
 app.use(express.json());
 
 // Available Routes
+app.get("/api/",(req,res)=>{
+    res.status(200).json("Server Working!")
+})
 app.use("/api/auth",UserRoutes);
 app.use("/api/upload",FileUploadRoute);
 app.use("/api/jobs",JobRoutes)

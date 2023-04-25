@@ -14,8 +14,7 @@ const fetchuser = (req,res,next)=>{
         console.log(data.user);
         next();
     } catch (error) {
-        res.status(401).json({error:"Please use a valid token"});
-        
+        return res.status(401).json({error:"Please use a valid token"});
     }
   
     

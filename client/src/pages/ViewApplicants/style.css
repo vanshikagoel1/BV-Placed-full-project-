@@ -1,0 +1,28 @@
+#viewApplicantWrapper{
+    border:2px solid black;
+    height:100vh;
+    width:100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#listOfApplicant{
+    border:1px solid black;
+    width:60%;
+    height:60%;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: "40px";
+    padding:20px 0;
+    border-radius: 20px;
+}
+.applicantDetails{
+    width: 80%;
+    border-radius: 20px;
+    padding:8px 8px;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgba(187, 180, 180, 0.285);
+}

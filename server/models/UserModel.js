@@ -6,30 +6,25 @@ const UserSchema = new mongoose.Schema({
     required: true,
     min: 3,
     max: 20,
-    unique: true,
   },
   email: {
     type: String,
     required: true,
-    unique: true,
     max: 50,
   },
   smartId: {
     type: String,
     required: true,
-    unique: true,
     max: 50,
   },
   department: {
     type: String,
     required: true,
-    unique: true,
     max: 50,
   },
   contact: {
     type: String,
     required: true,
-    unique: true,
     max: 50,
   },
   password: {

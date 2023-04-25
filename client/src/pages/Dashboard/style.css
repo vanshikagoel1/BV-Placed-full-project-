@@ -5,8 +5,8 @@
     border-right:2px solid black;
     height:100vh;
     width: 20vw;
-    background-color: #291f60;
-    color:white;
+    background-color: white;
+    color:black;
 }
 #dashboardlogowrapper{
     border-bottom:1px solid black;
@@ -16,7 +16,8 @@
     align-items: center;
 }
 #DashboardLogo{
-    width:5vw;
+    width:20vw;
+    background-color: white;
 }
 #infoWrapper{
     display: flex;
@@ -37,13 +38,13 @@
 list-style-type: none;
 }
 #dashboardNavigation li{
-    border-bottom: 1px solid black;
+    border-bottom: 0.5px solid black;
     font-size: 1.5em;
     padding:1vh 0;
     text-align: center;
 }
 #dashboardNavigation li:hover{
-    background-color: white;
+    background-color: rgba(128, 128, 128, 0.516);
     color:#291f60;
     cursor: pointer;
 }
@@ -79,15 +80,26 @@ list-style-type: none;
     border-radius: 20px;
     padding:2vh 4vw;
     width: 80%;
-    height:70%;
+    max-height:70%;
     font-size: 20px;
     overflow-y: scroll;
 }
 #currentOffersList td,th{
     text-align: center;
+   
 }
-.dataHold{
-    border:2px solid black;
+#currentOffersList tr{
+    display: grid;
+    grid-template-columns: 10% 20% auto 30%;
+}
+.dataHold tr{
+    width:100%;
+   margin:1vh 0;
+}
+.dataHold td{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 #buttonGroupDashboard{
     display: flex;
@@ -100,4 +112,10 @@ list-style-type: none;
     padding:1vh 1vw;  
     border: none;  
     cursor: pointer;
+}
+#NoJobs{
+    width: 100%;
+    text-align: center;
+    font-size: 36px;
+    margin: 4vh 0;
 }

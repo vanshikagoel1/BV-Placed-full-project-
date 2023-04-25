@@ -6,43 +6,52 @@ import Pfp from "../../assets/Pfp.svg";
 import campusphoto from "../../assets/campusPhoto1.svg";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import NotAuthorized from "../NotAuthorized/NotAuthorized";
-import baseURL from '../../Common';
+import baseURL from "../../Common";
 
 const Landing = () => {
-  const [user, setuser] = useState(null)
+  const [user, setuser] = useState({});
   useEffect(() => {
-    axios.get(`${baseURL}/api/auth/fetchUser`,{
-      headers:{
-        'auth-token':JWT_TOKEN
-      }
-    })
-    .then(res=>{
-      console.log(res.data);
-      setuser(res.data)
-    }).
-    catch(err=>{
-      console.log(err);
-      res.json({err:err})
-    })  
-  }, [])
-  
-const navigate = useNavigate();
-const JWT_TOKEN = localStorage.getItem('JWT');
-  
+    if(JWT_TOKEN)
+    axios
+      .get(`${baseURL}/api/auth/fetchUser`, {
+        headers: {
+          "auth-token": JWT_TOKEN,
+        },
+      })
+      .then((res) => {
+        console.log(res.data);
+        setuser(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
-  if(user && user.email)
+  const navigate = useNavigate();
+  const JWT_TOKEN = localStorage.getItem("JWT");
+
   return (
     <div id="landingPageWrapper">
       <div className="navBar">
-        <img src={logo} alt="logo" id="collegLogo"/>
+        <img src={logo} alt="logo" id="collegLogo" />
         <nav>
           <ul>
-            <li><a href="/Home">Home</a></li>
-            <li><a href="/Dashboard">Dashboard</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">Contact</a></li>
+            <li>
+              <a href="/">Home</a>
+            </li>
+            <li>
+              {!user.email? <a href="/#/login">Login</a> :  <a href="/#/dashboard">Dashboard</a>}
+             
+            </li>
+            <li>
+              <a href="#">About Us</a>
+            </li>
+            <li>
+              <a href="#">FAQ</a>
+            </li>
+            <li>
+              <a href="#">Contact</a>
+            </li>
           </ul>
         </nav>
         <div id="pfpAndNotif">
@@ -55,20 +64,46 @@ const JWT_TOKEN = localStorage.getItem('JWT');
         <div id="leftHalfLanding">
           <h1>Open The Gates To Your Success</h1>
 
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic nulla quos veritatis ipsum architecto ratione omnis, enim, quo repellendus neque tenetur sunt libero officia eaque mollitia repellat. Fuga, minus placeat!Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic nulla quos veritatis ipsum architecto ratione omnis, enim, quo repellendus neque tenetur sunt libero officia eaque mollitia repellat. Fuga, minus placeat!</p>
-          <button onClick={()=>{
-            navigate('/dashboard')
-          }}>View Dashboard</button>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic nulla
+            quos veritatis ipsum architecto ratione omnis, enim, quo repellendus
+            neque tenetur sunt libero officia eaque mollitia repellat. Fuga,
+            minus placeat!Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Hic nulla quos veritatis ipsum architecto ratione omnis, enim,
+            quo repellendus neque tenetur sunt libero officia eaque mollitia
+            repellat. Fuga, minus placeat!
+          </p>
+          {
+            !user.email?
+           (
+            <button
+              onClick={() => {
+                navigate("/login");
+              }} 
+              id="dashboardLoginButton"
+            >
+              Login
+            </button>
+          ):
+            <button
+              onClick={() => {
+                navigate("/dashboard");
+              }}
+              id="dashboardLoginButton"
+            >
+              View Dashboard
+            </button>
+          }
 
           <div id="stats">
             <div>
-              <span className="statsNumber">86%</span>  Placement Percentage
+              <span className="statsNumber">100%</span> Placement Percentage
             </div>
             <div>
-            <span className="statsNumber"> 50+</span>   Companies Visited
+              <span className="statsNumber"> 30+</span> Companies Visited
             </div>
             <div>
-            <span className="statsNumber">   30LPA</span>  Highest Package
+              <span className="statsNumber"> 1 Cr</span> Highest Package
             </div>
           </div>
         </div>
@@ -78,8 +113,6 @@ const JWT_TOKEN = localStorage.getItem('JWT');
       </div>
     </div>
   );
-  return <NotAuthorized />
-
 };
 
 export default Landing;

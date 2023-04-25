@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./style.css"
 import logo from "../../assets/logo.png"
 import bell from "../../assets/bell.svg";
@@ -11,7 +11,28 @@ import {FiLogOut} from "react-icons/fi";
 import AddJob from '../../components/AddJob/AddJob';
 import baseURL from '../../Common';
 import ViewJobs from '../../components/ViewJobs/ViewJobs';
+import axios from 'axios';
 const AdminDashboard = () => {
+  const [user, setuser] = useState({});
+  const JWT_TOKEN = localStorage.getItem("JWT");
+    useEffect(() => {
+        axios
+          .get(`${baseURL}/api/auth/fetchUser`, {
+            headers: {
+              "auth-token": JWT_TOKEN,
+            },
+          })
+          .then((res) => {
+            console.log(res.data);
+            setuser(res.data);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      }, []);
+
+  if(user.userType!="admin")
+  return <div>Only Admins Allowed</div>
   return (
     <IconContext.Provider value={{ color: "inherit",size:"42px" }}>
     <div id="adminWrapper">

@@ -3,4 +3,10 @@
   padding: 0;
   margin: 0;
   font-family: 'Times New Roman', Times, serif;
+  --primary-color: #df7500;
+  --primary-color-light:#df7300c8;
+  --alternate-background:#291F60;
+}
+.highLightText{
+  color:var(--primary-color);
 }

@@ -2,17 +2,19 @@ import React, { useEffect, useState } from "react";
 import "./style.css";
 import photo from "../../assets/Pfp.svg";
 import bell from "../../assets/bell.svg";
-import logo from "../../assets/logodark.png";
+import logo from "../../assets/logo.png";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import baseURL from '../../Common';
+import baseURL from "../../Common";
+import { ToastContainer, toast } from 'react-toastify';
 import NotAuthorized from "../NotAuthorized/NotAuthorized";
 const Dashboard = () => {
-  const [jobs, setJobs] = useState([]);
-  const [user, setuser] = useState(null);
-  const navigate = useNavigate();
-  const JWT_TOKEN = localStorage.getItem("JWT");
 
+  
+  const [jobs, setJobs] = useState([]);
+  const [user, setuser] = useState({});
+  const JWT_TOKEN = localStorage.getItem("JWT");
+  const navigate = useNavigate();
   const fetchAllJobs = async () => {
     axios
       .get(`${baseURL}/api/jobs/fetchall`, {
@@ -28,7 +30,16 @@ const Dashboard = () => {
         console.log(err);
       });
   };
-
+  const notifyLogout = () =>{
+    toast.success('Logging you out',
+    {
+      onClose:()=>{
+        localStorage.setItem("JWT", "");
+        navigate('/')
+      }
+    }
+    )
+  }
   useEffect(() => {
     axios
       .get(`${baseURL}/api/auth/fetchUser`, {
@@ -47,30 +58,29 @@ const Dashboard = () => {
       });
   }, []);
 
-  const viewJob = async (e) => {
-    e.preventDefault();
-    const jobId = e.target.name;
-  };
+ 
   const applyToJob = async (e) => {
     e.preventDefault();
     const jobId = e.target.name;
-    axios.get(`${baseURL}/api/jobs/apply/${jobId}`,{
-      headers:{
-        'auth-token':JWT_TOKEN
-      }
-    })
-    .then(res=>{
-      alert("Applied");
-      console.log(res);
-    })
-    .catch(err=>{
-      console.log(err);
-    })
+    axios
+      .get(`${baseURL}/api/jobs/apply/${jobId}`, {
+        headers: {
+          "auth-token": JWT_TOKEN,
+        },
+      })
+      .then((res) => {
+        console.log(res);
+        toast.success('Successfully Applied to the Job!');
+      })
+      .catch((err) => {
+        console.log(err);
+      });
     console.log("Apply to the Job");
   };
   if (!user) return <NotAuthorized />;
   return (
     <div id="dashboardWrapper">
+      <ToastContainer />
       <div id="sidebar">
         <div id="dashboardlogowrapper">
           <img src={logo} alt="Logo" id="DashboardLogo" />
@@ -83,18 +93,22 @@ const Dashboard = () => {
         <div id="dashboardNavigation">
           <ul>
             <li>
-              <a href="/dashboard">Dashboard</a>
+              <a href="/#/dashboard">Dashboard</a>
             </li>
             <li>
-              <a href="/profile">Profile</a>
+              <a href="/#/profile">Profile</a>
             </li>
             <li>
-              <a href="/home">Home</a>
+              <a href="/#/">Home</a>
             </li>
             <li>
-              <a onClick={()=>{
-                localStorage.setItem('JWT','');
-              }}>Log Out</a>
+              <a
+                onClick={() => {
+                  notifyLogout();
+                }}
+              >
+                Log Out
+              </a>
             </li>
           </ul>
         </div>
@@ -116,24 +130,33 @@ const Dashboard = () => {
               </tr>
             </thead>
             <tbody className="dataHold">
-              {jobs &&
-                jobs.map((job, index) => {
-                  return (
-                    <tr key={index} className="dataHold">
-                      <td>{index + 1}.</td>
-                      <td>{job.CompanyName}</td>
-                      <td>{job.JobTitle}</td>
-                      <td id="buttonGroupDashboard">
-                        <button name={job._id} onClick={viewJob}>
-                          View
-                        </button>
-                        <button name={job._id} onClick={applyToJob}>
-                          Apply
-                        </button>
-                      </td>
-                    </tr>
-                  );
-                })}
+              {
+                jobs.length==0?
+              <tr id="NoJobs"><td>No Jobs Posted yet!</td></tr>
+              :
+              jobs.map((job, index) => {
+                return (
+                  <tr key={index}>
+                    <td>{index + 1}.</td>
+                    <td>{job.CompanyName}</td>
+                    <td>{job.JobTitle}</td>
+                    <td id="buttonGroupDashboard">
+                      <button name={job._id} 
+                      onClick={()=>{
+                        navigate(`/jobs/${job._id}`);
+                      }}
+                      >
+                        View
+                      </button>
+                      <button name={job._id} onClick={applyToJob}>
+                        Apply
+                      </button>
+                    </td>
+                  </tr>
+                );
+              })
+              }
+             
             </tbody>
           </table>
         </div>

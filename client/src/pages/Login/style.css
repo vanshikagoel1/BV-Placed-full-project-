@@ -35,7 +35,7 @@
     height:90vh;
     align-items: center;
     justify-content: space-evenly;
-    background-color: #291F60;
+    background-color: var(--alternate-background);
     color:#FFFFFF;
     border-radius: 10px;
     width: 80%;
@@ -84,4 +84,5 @@
     border:1px solid rgba(0, 0, 0, 0.485);
     outline: none;
     color: #FFFFFF;
+    cursor: pointer;
   }
