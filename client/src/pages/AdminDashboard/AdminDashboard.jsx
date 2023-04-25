@@ -30,9 +30,6 @@ const AdminDashboard = () => {
             console.log(err);
           });
       }, []);
-
-  if(user.userType!="admin")
-  return <div>Only Admins Allowed</div>
   return (
     <IconContext.Provider value={{ color: "inherit",size:"42px" }}>
     <div id="adminWrapper">
